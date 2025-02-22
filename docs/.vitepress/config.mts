@@ -35,12 +35,14 @@ export default defineConfig({
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
           
         ]
+      },
+      {
+        text: 'Git',
+        items: [
+          { text: '常见问题', link: '/Git/常见问题' },
+        ]
       }
     ],
-    // sidebar: { 
-    //   "/blog": set_sidebar("/blog"),
-    //   "/数据结构": set_sidebar("/数据结构"),
-    // },
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
