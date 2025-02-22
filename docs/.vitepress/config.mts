@@ -31,7 +31,9 @@ export default defineConfig({
         text: 'learn_java',
         items: [
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
-          { text: 'ch03_variable', link: '/learn_java/ch03_variable' }
+          { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
+          { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
+          
         ]
       }
     ],
