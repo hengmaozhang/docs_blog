@@ -7,7 +7,7 @@ export default defineConfig({
   description: "A VitePress Site",
   themeConfig: {
     outlineTitle: '目录',
-    outline: [2,6],
+    outline: [1,6],
     logo: 'public\\logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -20,14 +20,15 @@ export default defineConfig({
         text: 'learn_java',
         items: [
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
-          { text: 'ch03_variable', link: '/learn_java/ch03_variable' }
+          { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
+          { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
         ]
       },
-      { text: 'Examples', link: '/markdown-examples' },
     ],
 
     sidebar: [
       {
+        collapsed: true, // 设置侧边栏默认折叠
         text: 'learn_java',
         items: [
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
@@ -38,6 +39,7 @@ export default defineConfig({
       },
       {
         text: 'Git',
+        collapsed: true, // 设置侧边栏默认折叠
         items: [
           { text: '常见问题', link: '/Git/常见问题' },
         ]
