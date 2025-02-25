@@ -43,7 +43,7 @@
 
 ![](https://raw.githubusercontent.com/timerring/scratchpad2023/main/2023/04/11-18-12-56-1681207973.png)
 
-## 关系运算符(比较运算符)
+## 关系运算符 比较运算符 
 
 关系运算符的结果都是boolean 型，也就是要么是true，要么是false
 
