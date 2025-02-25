@@ -15,7 +15,7 @@ export default defineConfig({
     nav: [
       { text: 'Home', items:[
           {text: '首页', link: '/'},
-          {text: '关于', link: '/about'}
+          {text: '关于', link: '/markdown-examples'}
         ]
       },
       {
