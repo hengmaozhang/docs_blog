@@ -7,7 +7,7 @@ hero:
   text: "一个文档站点"
   tagline: 遇事不决，可问春风
   image:
-    src: /background.png
+    src: /docs_blog/public/background.png
     alt: 背景图片
   actions:
     - theme: brand

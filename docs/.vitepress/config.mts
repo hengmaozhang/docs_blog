@@ -4,12 +4,13 @@ import { set_sidebar } from "D:\\docs_blog\\docs\\.vitepress\\utils\\auto_sideba
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: "/docs_blog/",
+
   title: "我的文档项目",
   description: "A VitePress Site",
   themeConfig: {
     outlineTitle: '文章目录',
     outline: [2,6],
-    logo: 'public\\logo.png',
+    logo: '/docs_blog/public/logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', items:[
@@ -48,7 +49,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/hengmaozhang' }
     ],
 
        // 设置搜索框的样式
@@ -75,7 +76,7 @@ export default defineConfig({
     // 底部配置
     footer: {
       message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2019-present Evan You'
+      copyright: 'Copyright © 2025-present Evan You'
     }
   }
 })
