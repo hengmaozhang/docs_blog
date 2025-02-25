@@ -3,6 +3,7 @@ import { set_sidebar } from "D:\\docs_blog\\docs\\.vitepress\\utils\\auto_sideba
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: "/docs_blog/",
   title: "我的文档项目",
   description: "A VitePress Site",
   themeConfig: {
