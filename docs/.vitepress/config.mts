@@ -7,8 +7,8 @@ export default defineConfig({
   title: "我的文档项目",
   description: "A VitePress Site",
   themeConfig: {
-    outlineTitle: '目录',
-    outline: [1,6],
+    outlineTitle: '文章目录',
+    outline: [2,6],
     logo: 'public\\logo.png',
     // https://vitepress.dev/reference/default-theme-config
     nav: [
