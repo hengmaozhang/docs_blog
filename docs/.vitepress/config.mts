@@ -1,8 +1,9 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from "vitepress-plugin-mermaid";
 import { set_sidebar } from "D:\\docs_blog\\docs\\.vitepress\\utils\\auto_sidebar.mjs";	// 改成自己的路径
 
 // https://vitepress.dev/reference/site-config
-export default defineConfig({
+export default withMermaid({
   base: "/docs_blog/",
   head: [["link", { rel: "icon", href: "/logo.svg" }]],
   title: "我的文档项目",
@@ -44,6 +45,13 @@ export default defineConfig({
         collapsed: true, // 设置侧边栏默认折叠
         items: [
           { text: '常见问题', link: '/Git/常见问题' },
+        ]
+      },
+      {
+        text: '教程',
+        collapsed: true, // 设置侧边栏默认折叠
+        items: [
+          { text: 'vitepress搭建并部署网站', link: '/Tutorial/vitepress' },
         ]
       }
     ],
@@ -95,10 +103,16 @@ export default defineConfig({
     },
   },
 
-    // 底部配置
-    footer: {
-      message: 'Released under the MIT License.',
-      copyright: 'Copyright © 2025-present Evan You'
-    }
+  // 底部配置
+  footer: {
+    message: 'Released under the MIT License.',
+    copyright: 'Copyright © 2025-present Evan You'
+  },
+  mermaid: {
+    // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
+  },
+  mermaidPlugin: {
+    class: "mermaid my-class", // set additional css classes for parent container
+  },
   }
 })
