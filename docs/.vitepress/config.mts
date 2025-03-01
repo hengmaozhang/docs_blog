@@ -25,6 +25,7 @@ export default withMermaid({
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
+          { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
         ]
       },
     ],
@@ -37,7 +38,7 @@ export default withMermaid({
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
-          { text: 'ch05_program_control', link: '/learn_java/ch05_program_control_structure'},
+          { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
         ]
       },
       {
