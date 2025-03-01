@@ -37,7 +37,7 @@ export default withMermaid({
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
-          
+          { text: 'ch05_program_control', link: '/learn_java/ch05_program_control_structure'},
         ]
       },
       {
@@ -84,29 +84,30 @@ export default withMermaid({
 
     // 设置搜索框的样式
     search: {
-    provider: "local",
-    options: {
-      translations: {
-        button: {
-          buttonText: "搜索文档",
-          buttonAriaLabel: "搜索文档",
-        },
-        modal: {
-          noResultsText: "无法找到相关结果",
-          resetButtonTitle: "清除查询条件",
-          footer: {
-            selectText: "选择",
-            navigateText: "切换",
+      provider: "local",
+      options: {
+        translations: {
+          button: {
+            buttonText: "搜索文档",
+            buttonAriaLabel: "搜索文档",
+          },
+          modal: {
+            noResultsText: "无法找到相关结果",
+            resetButtonTitle: "清除查询条件",
+            footer: {
+              selectText: "选择",
+              navigateText: "切换",
+            },
           },
         },
       },
     },
-  },
 
-  // 底部配置
-  footer: {
-    message: 'Released under the MIT License.',
-    copyright: 'Copyright © 2025-present Evan You'
+    // 底部配置
+    footer: {
+      message: 'Released under the MIT License.',
+      copyright: 'Copyright © 2025-present Evan You'
+    },
   },
 
   // 配置markdown扩展
@@ -130,9 +131,8 @@ export default withMermaid({
   mermaid: {
     // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
   },
-  
+
   mermaidPlugin: {
     class: "mermaid my-class", // set additional css classes for parent container
   },
-  }
 })
