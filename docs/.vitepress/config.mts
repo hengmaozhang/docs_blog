@@ -108,9 +108,29 @@ export default withMermaid({
     message: 'Released under the MIT License.',
     copyright: 'Copyright © 2025-present Evan You'
   },
+
+  // 配置markdown扩展
+  markdown: {
+    lineNumbers: true, // 开启代码块行号
+    // options for markdown-it-anchor
+    // https://github.com/valeriangalliat/markdown-it-anchor#usage
+    // anchor: {
+    //   permalink: markdownItAnchor.permalink.headerLink(),
+    // },
+
+    // // options for @mdit-vue/plugin-toc
+    // // https://github.com/mdit-vue/mdit-vue/tree/main/packages/plugin-toc#options
+    // toc: { level: [2, 3] },
+    // config: (md) => {
+    //   // use more markdown-it plugins!
+    //   md.use(tocPlugin);
+    // },
+  },
+
   mermaid: {
     // refer https://mermaid.js.org/config/setup/modules/mermaidAPI.html#mermaidapi-configuration-defaults for options
   },
+  
   mermaidPlugin: {
     class: "mermaid my-class", // set additional css classes for parent container
   },

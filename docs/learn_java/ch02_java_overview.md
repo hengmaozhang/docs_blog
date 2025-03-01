@@ -1,5 +1,3 @@
-[TOC]
-
 [第2章 Java概述与基础知识](#第2章-java概述与基础知识)
 
 - [Java 历史](#java-历史)
@@ -11,17 +9,23 @@
   - [JRE 基本介绍](#jre-基本介绍)
   - [JDK、JRE 和JVM 的包含关系](#jdkjre-和jvm-的包含关系)
 - [Java 快速入门](#java-快速入门)
-- [注意细节](#注意细节)
+  - [开发步骤](#开发步骤)
+  - [注意细节](#注意细节)
+  - [代码](#代码)
+
 - [Java 转义字符](#java-转义字符)
-  - [Java 常用的转义字符](#java-常用的转义字符)
+  - [常用的转义字符](#常用的转义字符)
+  - [代码ChangeChar.java](#代码ChangeChar.java)
 - [注释(comment)](#注释comment)
   - [Java 中的注释类型](#java-中的注释类型)
-  - [关于文档注释](#关于文档注释)
+  - [文档注释](#文档注释)
+    - [代码示例](#代码示例)
     - [javadoc 常见标签](#javadoc-常见标签)
 - [Java 代码规范](#java-代码规范)
 - [DOS 命令](#dos-命令)
   - [DOS 介绍](#dos-介绍)
-  - [常用的dos 命令](#常用的dos-命令)
+  - [常用dos 命令](#常用dos-命令)
+  - [其他DOS命令](#其他DOS命令)
 - [环境变量path配置及其作用](#环境变量path配置及其作用)
 
 # 第2章 Java概述与基础知识
@@ -160,25 +164,25 @@ class Tiger {
 }
 ```
 
-#### **运行：**
+**运行**
 
 ![](https://hengmaozhang.github.io/picx-images-hosting/20250222/picx-image-20250220091638856.26lm1tjwsr.jpg)
 
 ------
 
-#### **遇到的问题：**
+**遇到的问题**
 
 ![](https://hengmaozhang.github.io/picx-images-hosting/20250222/picx-image-20250219181927995.70agxy5gg5.jpg)
 
 
 
-#### **解决方法：**
+**解决方法**
 
 在编辑系统环境变量的CLASSPATH中添加''%JAVA_HOME%\bin"
 
 ## Java 转义字符
 
-### Java 常用的转义字符
+### 常用的转义字符
 
 在控制台，输入tab 键，可以实现命令补全
 
@@ -193,7 +197,7 @@ class Tiger {
 | \r       | 一个回车 但不换行          |
 | \r\n     | 回车+换行                  |
 
-### 代码
+### 代码ChangeChar.java
 
 ```java
 //演示转义字符的使用
@@ -238,7 +242,7 @@ public class ChangeChar {
 
 ### 文档注释
 
-#### 代码
+#### 代码示例
 
 ```java
 /**
@@ -307,7 +311,7 @@ Dos：Disk Operating System 磁盘操作系统, 简单说一下windows 的目录
 
 ![原理图](https://hengmaozhang.github.io/picx-images-hosting/picx-image.70agxghxb3.jpg )
 
-### 常用的dos 命令
+### 常用dos 命令
 
 | 命令                  | 功能                           | 案例                    |
 | --------------------- | ------------------------------ | ----------------------- |
