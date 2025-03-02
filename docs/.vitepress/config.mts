@@ -25,7 +25,7 @@ export default withMermaid({
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
-          { text: 'ch05_control', link: '/learn_java/ch05_control'},
+          { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
         ]
       },
     ],
@@ -38,7 +38,7 @@ export default withMermaid({
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
-          { text: 'ch05_control', link: '/learn_java/ch05_control'},
+          { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
         ]
       },
       {
@@ -56,6 +56,8 @@ export default withMermaid({
         ]
       }
     ],
+
+    lastUpdated: true, // 显示上次修改时间
 
     // socialLinks: [
     //   { icon: 'github', link: 'https://github.com/hengmaozhang' }
@@ -136,4 +138,5 @@ export default withMermaid({
   mermaidPlugin: {
     class: "mermaid my-class", // set additional css classes for parent container
   },
+  
 })
