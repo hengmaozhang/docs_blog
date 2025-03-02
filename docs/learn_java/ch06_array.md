@@ -235,7 +235,7 @@ public class ArrayAdd02 {
 
 ### 动态初始化1
 
-1) 语法: 类型[][] 数组名=new 类型[大小][大小]
+1) 语法: 类型[][] 数组名=new 类型\[大小\]\[大小\]
 2) 比如: int a[][]=new int\[2\]\[3\]
 3) 二维数组在内存的存在形式(!!画图)
 
@@ -245,7 +245,7 @@ public class ArrayAdd02 {
 
 先声明：类型数组名[][]; 
 
-再定义(开辟空间) 数组名= new 类型[大小][大小]
+再定义(开辟空间) 数组名= new 类型\[大小\]\[大小\]
 
 赋值(有默认值，比如int 类型的就是0)
 
@@ -328,7 +328,7 @@ public class TwoDimensionalArray {
 
 3.从第三行开始,对于非第一个元素和最后一个元素的元素的值.
 
-arr[i][j] = arr[i-1][j] + arr[i-1][j-1];
+arr\[i\]\[j\] = arr\[i-1\]\[j\] + arr\[i-1\]\[j-1\];
 
 ```java
 public class YangHui { 
