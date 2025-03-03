@@ -13,7 +13,7 @@
     - [动态初始化1](#动态初始化1)
     - [动态初始化2](#动态初始化2)
     - [静态初始化](#静态初始化)
-    - [代码 TwoDimensionalArray.java](#代码 TwoDimensionalArray.java)
+    - [代码 TwoDimensionalArray.java](#代码-twodimensionalarrayjava)
     - [二维数组的应用案例](#二维数组的应用案例)
     - [二维数组使用细节和注意事项](#二维数组使用细节和注意事项)
 
@@ -218,6 +218,7 @@ public class ArrayAdd02 {
 			for(int i = 0; i < arr.length; i++) {
 				System.out.print(arr[i] + "\t");
 			}
+
 			//问用户是否继续
 			System.out.println("是否继续添加 y/n");
 			char key = myScanner.next().charAt(0);
