@@ -219,7 +219,7 @@ public class ArrayAdd02 {
 				System.out.print(arr[i] + "\t");
 			}
 
-			//问用户是否继续
+			
 			System.out.println("是否继续添加 y/n");
 			char key = myScanner.next().charAt(0);
 			if( key == 'n') { //如果输入n ,就结束
