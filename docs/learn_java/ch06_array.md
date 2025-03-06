@@ -28,7 +28,7 @@
 
 #### 使用方式1-动态初始化数组的定义
 
-数据类型数组名[]=new数据类型[大小]
+数据类型数组名\[\]=new数据类型[大小]
 
 ```java
 int a[] = new int[5];//创建了一个数组，名字a,存放5个int
@@ -84,15 +84,14 @@ public class Array {
 
 #### 使用方式3-静态初始化
 
-语法:数据类型 数组名[]={元素值，元素值...} `int a[]={2,5,6,7,8,89,90,34,56},`
+语法:数据类型 数组名\[\]={元素值，元素值...} `int a[]={2,5,6,7,8,89,90,34,56},`
 
 ## 数组使用注意事项和细节
 
 1) 数组中的元素可以是任何数据类型，包括基本类型和引用类型，但是不能混用。
 
 2) 数组创建后，如果没有赋值，有默认值
-   ·`int` 0  `short` 0  `byte` 0  `long` 0  `float` 0.0  `double` 0.0   `char` \u0000  `boolean` false  `String` null
-   
+   `int` 0  `short` 0  `byte` 0  `long` 0  `float` 0.0  `double` 0.0   `char` \u0000  `boolean` false  `String` null
 3. 数组属引用类型，数组型数据是对象(object)
 
 ## 数组应用案例
@@ -219,7 +218,6 @@ public class ArrayAdd02 {
 				System.out.print(arr[i] + "\t");
 			}
 
-			
 			System.out.println("是否继续添加 y/n");
 			char key = myScanner.next().charAt(0);
 			if( key == 'n') { //如果输入n ,就结束
@@ -252,8 +250,8 @@ public class ArrayAdd02 {
 
 ### 静态初始化
 
-定义类型数组名\[\]\[\] = {{值1,值2..},{值1,值2..},{值1,值2..}}
-int[][] arr = {{1,1,1}, {8,8,9}, {100}};
+定义类型数组名\[\]\[\] = \{\{值1,值2..\},\{值1,值2..\},\{值1,值2..\}\}
+int[][] arr = \{\{1,1,1\}, \{8,8,9\}, \{100\}\};
 
 ### 代码 TwoDimensionalArray.java
 
