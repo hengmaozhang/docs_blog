@@ -10,8 +10,7 @@ hero:
   actions:
     - theme: brand
       text: "GOGOGO!"
-      link: /markdown-examples
-
+      link: /markdown-welcome
 features:
   - title: 智慧之选
     details: 选择的方向对了，努力才有意义
