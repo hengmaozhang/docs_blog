@@ -1,4 +1,4 @@
-﻿# 安装
+# 安装
 > **安装环境:Win10 64位**
 > **软件版本:MySQL 5.7.24 解压版**
 
@@ -169,9 +169,7 @@ mysqld -remove mysql
 * SQLite：嵌入式的微型数据库。如：作为 Android 内置数据库
 * MariaDB：开源免费中小型的数据库
 
-我们课程上学习的是MySQL数据库管理系统，PostgreSQL在一些公司也有使用，此时大家肯定会想以后在公司中如果使用我们没有学习过程的PostgreSQL数据库管理系统怎么办？这点大家大可不必担心，如下图所示：
-
-<img src="assets/image-20210721185303106.png" alt="image-20210721185303106" style="zoom:80%;" />
+我们课程上学习的是MySQL数据库管理系统，PostgreSQL在一些公司也有使用，此时大家肯定会想以后在公司中如果使用我们没有学习过程的PostgreSQL数据库管理系统怎么办？这点大家大可不必担心。
 
 我们可以通过数据库管理系统操作数据库，对数据库中的数据进行增删改查操作，而怎么样让用户跟数据库管理系统打交道呢？就可以通过一门编程语言（SQL）来实现。
 
@@ -190,10 +188,6 @@ mysqld -remove mysql
 
 > 关系型数据库是建立在关系模型基础上的数据库，简单说，关系型数据库是由多张能互相连接的 二维表 组成的数据库
 
-如下图，`订单信息表` 和 `客户信息表` 都是有行有列二维表我们将这样的称为关系型数据库。
-
-![image-20210721205130231](assets/image-20210721205130231.png)
-
 接下来看关系型数据库的优点：
 
 * 都是使用表结构，格式一致，易于维护。
@@ -204,21 +198,9 @@ mysqld -remove mysql
 
 **数据模型：**
 
-<img src="assets/image-20210721212754568.png" alt="image-20210721212754568" style="zoom:70%;" />
-
-如上图，我们通过客户端可以通过数据库管理系统创建数据库，在数据库中创建表，在表中添加数据。创建的每一个数据库对应到磁盘上都是一个文件夹。比如可以通过SQL语句创建一个数据库（数据库名称为db1），语句如下。该语句咱们后面会学习。
-
-<img src="assets/image-20210721213349761.png" alt="image-20210721213349761" style="zoom:80%;" />
-
-
-
 我们可以在数据库安装目录下的data目录下看到多了一个 `db1` 的文件夹。所以，**在MySQL中一个数据库对应到磁盘上的一个文件夹。**
 
 而一个数据库下可以创建多张表，我们到MySQL中自带的mysql数据库的文件夹目录下：
-
-<img src="assets/image-20210721214029913.png" alt="image-20210721214029913" style="zoom:80%;" />
-
-而上图中右边的 `db.frm` 是表文件，`db.MYD` 是数据文件，通过这两个文件就可以查询到数据展示成二维表的效果。
 
 **小结：**
 
@@ -243,23 +225,11 @@ mysqld -remove mysql
 
 * SQL 语句可以单行或多行书写，以分号结尾。
 
-  <img src="assets/image-20210721215223872.png" alt="image-20210721215223872" style="zoom:80%;" /> 
-
-  如上，以分号结尾才是一个完整的sql语句。
-
 * MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。
-
-  同样的一条sql语句写成下图的样子，一样可以运行处结果。
-
-  <img src="assets/image-20210721215328410.png" alt="image-20210721215328410" style="zoom:80%;" /> 
 
 * 注释
 
   * 单行注释: -- 注释内容 或 #注释内容(MySQL 特有) 
-
-    <img src="assets/image-20210721215517293.png" alt="image-20210721215517293" style="zoom:80%;" /> 
-
-    <img src="assets/image-20210721215556885.png" alt="image-20210721215556885" style="zoom:80%;" /> 
 
     > 注意：使用-- 添加单行注释时，--后面一定要加空格，而#没有要求。
 
@@ -271,13 +241,9 @@ mysqld -remove mysql
 
   DDL简单理解就是用来操作数据库，表等
 
-  <img src="assets/image-20210721220032047.png" alt="image-20210721220032047" style="zoom:60%;" />
-
 * DML(Data Manipulation Language) 数据操作语言，用来对数据库中表的数据进行增删改
 
   DML简单理解就对表中数据进行增删改
-
-  <img src="assets/image-20210721220132919.png" alt="image-20210721220132919" style="zoom:60%;" />
 
 * DQL(Data Query Language) 数据查询语言，用来查询数据库中表的记录(数据)
 
@@ -782,8 +748,8 @@ AS: AS 也可以省略
 ```sql
 select name,math as 数学成绩,english as 英文成绩 from stu;
 select name,math 数学成绩,english 英文成绩 from stu;
-  ```
-  
+```
+
 
 ### 7.2  条件查询
 
@@ -2066,7 +2032,7 @@ START TRANSACTION;
 commit;
 --回滚事务
 rollback;
-  ```
+```
 
   
 
