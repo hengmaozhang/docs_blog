@@ -3,15 +3,13 @@
 layout: home
 
 hero:
-  name: "hm_forever的文档项目"
+  name: "hm_zhang的文档项目"
   text: "构建知识库"
   tagline: 遇事不决，可问春风
-  image:
-    src: /background.svg
-    alt: 背景图
+
   actions:
     - theme: brand
-      text: Markdown Examples
+      text: "GO!"
       link: /markdown-examples
     - theme: alt
       text: API Examples

@@ -19,16 +19,6 @@ export default withMermaid({
           {text: '关于', link: '/markdown-examples'}
         ]
       },
-      {
-        text: 'learn_java',
-        items: [
-          { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
-          { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
-          { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
-          { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
-          { text: 'ch07_oop_fundamentals', link: '/learn_java/ch07_oop_fundamentals'},
-        ]
-      },
     ],
 
     sidebar: [
@@ -41,6 +31,24 @@ export default withMermaid({
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
           { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
           { text: 'ch07_oop_fundamentals', link: '/learn_java/ch07_oop_fundamentals'},
+        ]
+      },
+      {
+        text: 'MySQL',
+        collapsed: true, // 设置侧边栏默认折叠
+        items: [
+          { text: 'MySQL', link: '/MySQL/MySQL.md' },
+        ]
+      },
+      {
+        text: '算法',
+        collapsed: true, // 设置侧边栏默认折叠
+        items: [
+          { text: 'ch03 分治算法', link: '/al/ch03.md' },
+          { text: 'ch04 动态规划', link: '/al/ch04.md' },
+          { text: 'ch05 贪心算法', link: '/al/ch05.md' },
+          { text: '实验', link: '/al/lab.md' },
+          { text: 'Q&A', link: '/al/qs.md' },
         ]
       },
       {
@@ -77,7 +85,7 @@ export default withMermaid({
         icon: {
           svg: '<svg t="1704626282666" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="4227" width="200" height="200"><path d="M512 1024C229.222 1024 0 794.778 0 512S229.222 0 512 0s512 229.222 512 512-229.222 512-512 512z m259.149-568.883h-290.74a25.293 25.293 0 0 0-25.292 25.293l-0.026 63.206c0 13.952 11.315 25.293 25.267 25.293h177.024c13.978 0 25.293 11.315 25.293 25.267v12.646a75.853 75.853 0 0 1-75.853 75.853h-240.23a25.293 25.293 0 0 1-25.267-25.293V417.203a75.853 75.853 0 0 1 75.827-75.853h353.946a25.293 25.293 0 0 0 25.267-25.292l0.077-63.207a25.293 25.293 0 0 0-25.268-25.293H417.152a189.62 189.62 0 0 0-189.62 189.645V771.15c0 13.977 11.316 25.293 25.294 25.293h372.94a170.65 170.65 0 0 0 170.65-170.65V480.384a25.293 25.293 0 0 0-25.293-25.267z" fill="#C71D23" p-id="4228"></path></svg>',
         },
-        link: "https://gitee.com/Albert_han",
+        link: "https://gitee.com/hm_zhang",
       },
       {
         icon: {
