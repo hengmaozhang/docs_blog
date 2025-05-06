@@ -137,3 +137,32 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/* 自定义：可拖拽调整宽度的侧边栏 */
+.vitepress {
+  display: flex;
+}
+
+.sidebar {
+  width: 250px; /* 初始宽度 */
+  min-width: 150px;
+  max-width: 400px;
+  overflow-y: auto;
+  transition: width 0.3s ease;
+}
+
+.content {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.resizer {
+  width: 5px;
+  background-color: #ccc;
+  cursor: ew-resize;
+  position: relative;
+  z-index: 10;
+}
+
+.resizer:hover {
+  background-color: #888;
+}
