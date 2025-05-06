@@ -9,11 +9,8 @@ hero:
 
   actions:
     - theme: brand
-      text: "GO!"
+      text: "GOGOGO!"
       link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
 
 features:
   - title: 智慧之选
