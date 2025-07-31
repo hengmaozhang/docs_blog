@@ -34,10 +34,11 @@ export default withMermaid({
         ]
       },
       {
-        text: 'MySQL',
+        text: 'JavaWeb',
         collapsed: true, // 设置侧边栏默认折叠
         items: [
-          { text: 'MySQL', link: '/MySQL/MySQL.md' },
+          { text: 'MySQL', link: '/JavaWeb/MySQL.md' },
+          { text: 'JDBC', link: '/JavaWeb/JDBC.md' },
         ]
       },
       {

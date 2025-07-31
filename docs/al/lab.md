@@ -105,7 +105,7 @@ int main(){
 }
 ```
 
-### 1006 最大乘积
+### 1007 最大乘积
 
 #### 思路：
 
@@ -124,11 +124,22 @@ dp[i,j]: str[1,j]中插入i个乘号的乘积最大值
 对左边和右边分别找逆序对，并排列
 
 1 5 2 1 3
- 
+
 1 5   -> 1 5
 2 1 3 -> 1 2 3
 利用lower_bound找到第一个大于等于key的
 
 1 5
  1 3
- 
+
+### 1020 **矩阵连乘**
+
+定义结构体struct matrix
+维护矩阵数组 m[i] 从1还是存储
+dp[i] 前i个矩阵连乘的最小乘法代价
+
+状态转移方程：$$dp[i]=\min\{dp[i-1]+m[1].l \times m[i].l \times m[i].r,\\dp[i-2]+m[i-1].l \times m[i].l \times m[i].r + m[1].l \times m[i-1].l \times m[i].r\}$$
+
+终止：$dp[1]=0 $
+
+​         $dp[2]=m[1].l \times m[2].l \times m[2].r$
