@@ -40,6 +40,7 @@ export default withMermaid({
         items: [
           { text: 'MySQL', link: '/JavaWeb/MySQL.md' },
           { text: 'JDBC', link: '/JavaWeb/JDBC.md' },
+          { text: 'Maven&MyBatis', link: '/JavaWeb/Maven&MyBatis.md' },
         ]
       },
       {
