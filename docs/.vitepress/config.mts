@@ -26,7 +26,7 @@ export default withMermaid({
         collapsed: true, // 设置侧边栏默认折叠
         text: 'Java',
         items: [
-          { test: 'Java_contd', link: '/learn_java/java_contd' },
+          { test: 'java_contd', link: '/learn_java/java_contd.md' },
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
