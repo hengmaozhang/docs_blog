@@ -24,13 +24,14 @@ export default withMermaid({
     sidebar: [
       {
         collapsed: true, // 设置侧边栏默认折叠
-        text: 'learn_java',
+        text: 'Java',
         items: [
+          { test: 'Java_contd', link: '/learn_java/java_contd' },
           { text: 'ch02_java_overview', link: '/learn_java/ch02_java_overview' },
           { text: 'ch03_variable', link: '/learn_java/ch03_variable' },
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
           { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
-          { text: 'ch07_oop_fundamentals', link: '/learn_java/ch07_oop_fundamentals'},
+          { text: 'ch06_oop_fundamentals', link: '/learn_java/ch06_oop_fundamentals'},
         ]
       },
       {
