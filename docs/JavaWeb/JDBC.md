@@ -977,7 +977,7 @@ public class DruidDemo {
         Connection connection = dataSource.getConnection();
         System.out.println(connection); //获取到了连接后就可以继续做其他操作了
 
-        //System.out.println(System.getProperty("user.dir"));
+        //System.out.println(System.getProperty("user.dir")); 获取当前路径，以找到文件的路径
     }
 }
 ```
@@ -1027,12 +1027,14 @@ public class DruidDemo {
 * 在pojo包下实体类 Brand
 
   ```java
-  /**
-   * 品牌
-   * alt + 鼠标左键：整列编辑
-   * 在实体类中，基本数据类型建议使用其对应的包装类型
-   */
+  package com.hm.jdbc.pojo;
+  
+  // ctrl+R   一键替换
+  // alt+左键 整列编辑
+  // 在实体类中，基本数据类型建议使用其对应的包装类型
+  
   public class Brand {
+  
       // id 主键
       private Integer id;
       // 品牌名称
@@ -1040,18 +1042,19 @@ public class DruidDemo {
       // 企业名称
       private String companyName;
       // 排序字段
-      private Integer ordered;
+      private int ordered;
       // 描述信息
       private String description;
-      // 状态：0：禁用  1：启用
+      // 状态：0：禁用
+      // 1：启用
       private Integer status;
   
       public Integer getId() {
           return id;
       }
   
-      public void setId(Integer id) {
-          this.id = id;
+      public void setId(int id) {
+          this.id = this.id;
       }
   
       public String getBrandName() {
@@ -1070,11 +1073,11 @@ public class DruidDemo {
           this.companyName = companyName;
       }
   
-      public Integer getOrdered() {
+      public int getOrdered() {
           return ordered;
       }
   
-      public void setOrdered(Integer ordered) {
+      public void setOrdered(int ordered) {
           this.ordered = ordered;
       }
   
@@ -1111,43 +1114,54 @@ public class DruidDemo {
 #### 5.2.2  查询所有
 
 ```java
- /**
-   * 查询所有
-   * 1. SQL：select * from tb_brand;
-   * 2. 参数：不需要
-   * 3. 结果：List<Brand>
-   */
+/*
+    *  查询所有
+    *  1.SQL: select * from tb_brand;
+    *  2.参数: 不需要
+    *  3.结果: List<Brand>
+    * */
+
+@Test // 测试test函数里的路径，与非test函数路径不同
+public void getPath(){
+    System.out.println(System.getProperty("user.dir"));
+}
 
 @Test
 public void testSelectAll() throws Exception {
-    //1. 获取Connection
-    //3. 加载配置文件
+    //1. 获取connection
+    // 加载配置文件
     Properties prop = new Properties();
-    prop.load(new FileInputStream("jdbc-demo/src/druid.properties"));
-    //4. 获取连接池对象
+    prop.load(new FileInputStream("src/druid.properties"));
+    // 获取连接池对象
     DataSource dataSource = DruidDataSourceFactory.createDataSource(prop);
 
-    //5. 获取数据库连接 Connection
+    // 获取数据库连接 Connection
     Connection conn = dataSource.getConnection();
-    //2. 定义SQL
-    String sql = "select * from tb_brand;";
+
+    //2. 定义sql
+    String sql = "select * from tb_brand";
+
     //3. 获取pstmt对象
-    PreparedStatement pstmt = conn.prepareStatement(sql);
+    PreparedStatement pstmt = conn.prepareStatement(sql); // 先写conn.prepareStatement(sql)，后用alt+enter补全前面的
+
     //4. 设置参数
-    //5. 执行SQL
+
+    //5. 执行sql
     ResultSet rs = pstmt.executeQuery();
-    //6. 处理结果 List<Brand> 封装Brand对象，装载List集合
-    Brand brand = null;
+
+    //6. 处理结果 List<Brand>封装
+    Brand brand = null; // 定义在外面节约空间
     List<Brand> brands = new ArrayList<>();
-    while (rs.next()){
-        //获取数据
-        int id = rs.getInt("id");
+    while(rs.next()){
+        // 获取数据
+        int id = rs.getInt("id");  // 建议使用列名作为变量，alt+enter会自动补全变量名
         String brandName = rs.getString("brand_name");
         String companyName = rs.getString("company_name");
         int ordered = rs.getInt("ordered");
         String description = rs.getString("description");
         int status = rs.getInt("status");
-        //封装Brand对象
+
+        // 封装brand对象
         brand = new Brand();
         brand.setId(id);
         brand.setBrandName(brandName);
@@ -1156,47 +1170,56 @@ public void testSelectAll() throws Exception {
         brand.setDescription(description);
         brand.setStatus(status);
 
-        //装载集合
+        // 装载集合
         brands.add(brand);
+
     }
+
     System.out.println(brands);
+
     //7. 释放资源
     rs.close();
     pstmt.close();
     conn.close();
+
 }
 ```
 
 #### 5.2.3  添加数据
 
 ```java
-/**
-  * 添加
-  * 1. SQL：insert into tb_brand(brand_name, company_name, ordered, description, status) values(?,?,?,?,?);
-  * 2. 参数：需要，除了id之外的所有参数信息
-  * 3. 结果：boolean
-  */
+/*
+     *  添加数据
+     *  1.SQL: INSERT INTO tb_brand(brand_name,company_name,ordered,description,status) VALUES (?,?,?,?,?);
+     *  2.参数: 需要，除id外的所有信息
+     *  3.结果: 返回boolean
+     * */
+
 @Test
 public void testAdd() throws Exception {
-    // 接收页面提交的参数
+    // 接受页面提交的参数
     String brandName = "香飘飘";
     String companyName = "香飘飘";
     int ordered = 1;
-    String description = "绕地球一圈";
+    String description = "好喝";
     int status = 1;
 
-    //1. 获取Connection
-    //3. 加载配置文件
+    //1. 获取connection
+    // 加载配置文件
     Properties prop = new Properties();
-    prop.load(new FileInputStream("jdbc-demo/src/druid.properties"));
-    //4. 获取连接池对象
+    prop.load(new FileInputStream("src/druid.properties"));
+    // 获取连接池对象
     DataSource dataSource = DruidDataSourceFactory.createDataSource(prop);
-    //5. 获取数据库连接 Connection
+
+    // 获取数据库连接 Connection
     Connection conn = dataSource.getConnection();
-    //2. 定义SQL
-    String sql = "insert into tb_brand(brand_name, company_name, ordered, description, status) values(?,?,?,?,?);";
+
+    //2. 定义sql
+    String sql = "INSERT INTO tb_brand(brand_name,company_name,ordered,description,status) VALUES (?,?,?,?,?)";
+
     //3. 获取pstmt对象
-    PreparedStatement pstmt = conn.prepareStatement(sql);
+    PreparedStatement pstmt = conn.prepareStatement(sql); // 先写conn.prepareStatement(sql)，后用alt+enter补全前面的
+
     //4. 设置参数
     pstmt.setString(1,brandName);
     pstmt.setString(2,companyName);
@@ -1204,10 +1227,11 @@ public void testAdd() throws Exception {
     pstmt.setString(4,description);
     pstmt.setInt(5,status);
 
-    //5. 执行SQL
+    //5. 执行sql
     int count = pstmt.executeUpdate(); // 影响的行数
+
     //6. 处理结果
-    System.out.println(count > 0);
+    System.out.println(count>0);
 
     //7. 释放资源
     pstmt.close();
@@ -1218,51 +1242,51 @@ public void testAdd() throws Exception {
 #### 5.2.4  修改数据
 
 ```java
-/**
-  * 修改
-  * 1. SQL：
-
-     update tb_brand
-         set brand_name  = ?,
-         company_name= ?,
-         ordered     = ?,
-         description = ?,
-         status      = ?
-     where id = ?
-
-   * 2. 参数：需要，所有数据
-   * 3. 结果：boolean
-   */
+/*
+     *  修改数据
+     *  1.SQL:
+        UPDATE tb_brand
+          SET brand_name=?,
+          company_name=?,
+          ordered=?,
+          description=?,
+          status=?
+        where id=?;
+     *  2.参数: 需要，所有数据
+     *  3.结果: 返回boolean
+     * */
 
 @Test
-public void testUpdate() throws Exception {
-    // 接收页面提交的参数
+public void testModify() throws Exception {
+    // 接受页面提交的参数
     String brandName = "香飘飘";
     String companyName = "香飘飘";
     int ordered = 1000;
-    String description = "绕地球三圈";
+    String description = "好喝吧";
     int status = 1;
     int id = 4;
 
-    //1. 获取Connection
-    //3. 加载配置文件
+    //1. 获取connection
+    // 加载配置文件
     Properties prop = new Properties();
-    prop.load(new FileInputStream("jdbc-demo/src/druid.properties"));
-    //4. 获取连接池对象
+    prop.load(new FileInputStream("src/druid.properties"));
+    // 获取连接池对象
     DataSource dataSource = DruidDataSourceFactory.createDataSource(prop);
-    //5. 获取数据库连接 Connection
+
+    // 获取数据库连接 Connection
     Connection conn = dataSource.getConnection();
-    //2. 定义SQL
-    String sql = " update tb_brand\n" +
-        "         set brand_name  = ?,\n" +
-        "         company_name= ?,\n" +
-        "         ordered     = ?,\n" +
-        "         description = ?,\n" +
-        "         status      = ?\n" +
-        "     where id = ?";
+
+    //2. 定义sql
+    String sql = "UPDATE tb_brand\n" +
+        "       SET brand_name=?,\n" +
+        "       company_name=?,\n" +
+        "       ordered=?,\n" +
+        "       description=?,\n" +
+        "       status=?\n" +
+        "     where id=?;";
 
     //3. 获取pstmt对象
-    PreparedStatement pstmt = conn.prepareStatement(sql);
+    PreparedStatement pstmt = conn.prepareStatement(sql); // 先写conn.prepareStatement(sql)，后用alt+enter补全前面的
 
     //4. 设置参数
     pstmt.setString(1,brandName);
@@ -1272,10 +1296,11 @@ public void testUpdate() throws Exception {
     pstmt.setInt(5,status);
     pstmt.setInt(6,id);
 
-    //5. 执行SQL
+    //5. 执行sql
     int count = pstmt.executeUpdate(); // 影响的行数
+
     //6. 处理结果
-    System.out.println(count > 0);
+    System.out.println(count>0);
 
     //7. 释放资源
     pstmt.close();
@@ -1286,35 +1311,42 @@ public void testUpdate() throws Exception {
 #### 5.2.5  删除数据
 
 ```java
-/**
-  * 删除
-  * 1. SQL：
-            delete from tb_brand where id = ?
-  * 2. 参数：需要，id
-  * 3. 结果：boolean
-  */
+/*
+     *  删除数据
+     *  1.SQL:DELETE FROM tb_brand where id=?;
+     *  2.参数: 需要，id
+     *  3.结果: 返回boolean
+     * */
+
 @Test
-public void testDeleteById() throws Exception {
-    // 接收页面提交的参数
+public void testDelete() throws Exception {
+    // 接受页面提交的参数
     int id = 4;
-    //1. 获取Connection
-    //3. 加载配置文件
+
+    //1. 获取connection
+    // 加载配置文件
     Properties prop = new Properties();
-    prop.load(new FileInputStream("jdbc-demo/src/druid.properties"));
-    //4. 获取连接池对象
+    prop.load(new FileInputStream("src/druid.properties"));
+    // 获取连接池对象
     DataSource dataSource = DruidDataSourceFactory.createDataSource(prop);
-    //5. 获取数据库连接 Connection
+
+    // 获取数据库连接 Connection
     Connection conn = dataSource.getConnection();
-    //2. 定义SQL
-    String sql = " delete from tb_brand where id = ?";
+
+    //2. 定义sql
+    String sql = "DELETE FROM tb_brand where id=?;";
+
     //3. 获取pstmt对象
-    PreparedStatement pstmt = conn.prepareStatement(sql);
+    PreparedStatement pstmt = conn.prepareStatement(sql); // 先写conn.prepareStatement(sql)，后用alt+enter补全前面的
+
     //4. 设置参数
     pstmt.setInt(1,id);
-    //5. 执行SQL
+
+    //5. 执行sql
     int count = pstmt.executeUpdate(); // 影响的行数
+
     //6. 处理结果
-    System.out.println(count > 0);
+    System.out.println(count>0);
 
     //7. 释放资源
     pstmt.close();
