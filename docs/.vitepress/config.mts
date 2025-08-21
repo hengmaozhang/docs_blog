@@ -31,7 +31,7 @@ export default withMermaid({
           { text: 'ch04_operator', link: '/learn_java/ch04_operator'},
           { text: 'ch05_program_control_structure', link: '/learn_java/ch05_program_control_structure'},
           { text: 'ch06_oop_fundamentals', link: '/learn_java/ch06_oop_fundamentals'},
-          { test: 'java_contd', link: 'docs\\learn_java\\java_contd.md' },
+          { test: 'java_contd', link: 'docs/learn_java/java_contd.md' },
         ]
       },
       {
