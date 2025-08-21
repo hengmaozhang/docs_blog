@@ -387,7 +387,7 @@ Maven 对项目构建的生命周期划分为3套：
 
 * 在项目的 pom.xml 中编写 `<dependencies>` 标签
 
-* 在 <dependencies> 标签中 使用 <dependency> 引入坐标
+* 在 `<dependencies>` 标签中 使用 `<dependency>` 引入坐标
 
 * 定义坐标的 groupId，artifactId，version
 
