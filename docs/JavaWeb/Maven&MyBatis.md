@@ -145,7 +145,7 @@ Maven是专门用于管理和构建Java项目的工具，它的主要功能有�
 
 * 配置本地仓库
 
-  修改 conf/settings.xml 中的 <localRepository> 为一个指定目录作为本地仓库，用来存储jar包。
+  修改 conf/settings.xml 中的 `<localRepository>` 为一个指定目录作为本地仓库，用来存储jar包。
 
   ![picx-image-20210726164348048](https://hengmaozhang.github.io/picx-images-hosting/20250820/picx-image-20210726164348048.b98d3gyxe.jpg)
 
@@ -153,7 +153,7 @@ Maven是专门用于管理和构建Java项目的工具，它的主要功能有�
 
   中央仓库在国外，所以下载jar包速度可能比较慢，而阿里公司提供了一个远程仓库，里面基本也都有开源项目的jar包。
 
-  修改 conf/settings.xml 中的 <mirrors>标签，为其添加如下子标签：
+  修改 conf/settings.xml 中的 `<mirrors>`标签，为其添加如下子标签：
 
   ```xml
   <mirror>  
@@ -385,7 +385,7 @@ Maven 对项目构建的生命周期划分为3套：
 
 **使用坐标引入jar包的步骤：**
 
-* 在项目的 pom.xml 中编写 <dependencies> 标签
+* 在项目的 pom.xml 中编写 `<dependencies>` 标签
 
 * 在 <dependencies> 标签中 使用 <dependency> 引入坐标
 
