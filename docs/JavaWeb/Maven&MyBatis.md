@@ -614,6 +614,7 @@ Maven 对项目构建的生命周期划分为3套：
   在模块下的 resources 目录下创建mybatis的配置文件 `mybatis-config.xml`，内容如下：
 
   ```xml
+
   <?xml version="1.0" encoding="UTF-8" ?>
   <!DOCTYPE configuration
           PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
@@ -879,7 +880,7 @@ Mybatis 官网也是推荐使用 Mapper 代理的方式。下图是截止官网�
             <property name="password" value="1234"/>
         </dataSource>
     </environment>
-</environments>=
+</environments>
 ```
 
 #### 2.4.2  类型别名
